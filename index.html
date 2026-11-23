@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10131c">
+  <meta name="description" content="A responsive professional calculator built with HTML, CSS and JavaScript.">
+  <title>NovaCalc — Smart Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="NovaCalc home"><span class="brand-icon">N</span><span>Nova<span class="brand-light">Calc</span></span></a>
+      <div class="topbar-right"><span class="status-dot"></span><span class="status-label">READY TO CALCULATE</span><button class="icon-button" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">☼</button></div>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">CODEALPHA · FRONTEND DEVELOPMENT</p>
+      <h1>Numbers made <span>simple.</span></h1>
+      <p class="subtitle">A clean, fast calculator for everyday calculations.</p>
+    </section>
+
+    <section class="workspace">
+      <div class="calculator card">
+        <div class="calc-heading"><div><span class="mini-label">STANDARD MODE</span><h2>Calculator</h2></div><span class="sparkle">✳</span></div>
+        <div class="display" aria-live="polite">
+          <div class="expression" id="expression">Ready for your calculation</div>
+          <output class="result" id="display">0</output>
+        </div>
+        <div class="keypad" id="keypad">
+          <button class="key utility" data-action="clear">AC</button>
+          <button class="key utility" data-action="delete" aria-label="Delete last character">DEL</button>
+          <button class="key utility" data-action="percent">%</button>
+          <button class="key operator" data-value="÷">÷</button>
+
+          <button class="key" data-value="7">7</button><button class="key" data-value="8">8</button><button class="key" data-value="9">9</button><button class="key operator" data-value="×">×</button>
+          <button class="key" data-value="4">4</button><button class="key" data-value="5">5</button><button class="key" data-value="6">6</button><button class="key operator" data-value="−">−</button>
+          <button class="key" data-value="1">1</button><button class="key" data-value="2">2</button><button class="key" data-value="3">3</button><button class="key operator" data-value="+">+</button>
+          <button class="key zero" data-value="0">0</button><button class="key" data-value=".">.</button><button class="key equals" data-action="equals">=</button>
+        </div>
+        <p class="keyboard-hint"><kbd>Enter</kbd> calculate <span>·</span> <kbd>Esc</kbd> clear <span>·</span> <kbd>Backspace</kbd> delete</p>
+      </div>
+
+      <aside class="side-column">
+        <section class="card tips-card">
+          <div class="side-title"><span class="side-icon">⌘</span><h3>Quick controls</h3></div>
+          <ul class="control-list">
+            <li><span>Calculate result</span><kbd>Enter</kbd></li>
+            <li><span>Clear all</span><kbd>Esc</kbd></li>
+            <li><span>Delete digit</span><kbd>⌫</kbd></li>
+            <li><span>Use operators</span><kbd>+ − × ÷</kbd></li>
+          </ul>
+          <div class="tip-note"><span>✦</span><p>Tip: You can use your keyboard or click the on-screen buttons.</p></div>
+        </section>
+        <section class="card history-card">
+          <div class="side-title"><div><span class="mini-label">YOUR RECENT WORK</span><h3>History</h3></div><button class="text-button" id="clearHistory">Clear</button></div>
+          <div class="history-list" id="historyList"><p class="empty-history">Your calculations will appear here.</p></div>
+        </section>
+      </aside>
+    </section>
+    <footer><span>© 2026 NovaCalc</span><span>Built with HTML · CSS · JavaScript</span></footer>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+</body>
+</html>
